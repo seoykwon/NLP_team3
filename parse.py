@@ -1,9 +1,11 @@
 # -*- coding: utf-8 -*-
 """
-extract_yearly_statements.py
+extract_yearly_statements.py (당기/전기 접미사 버전)
 --------------------------------
 data/raw/*.htm(l) 감사보고서 HTML에서 5대 재무제표를 파싱하여
 연도별 JSON 파일을 data/processed/json/by_year/financial_statements_dynamic_YYYY.json 로 저장.
+
+수정사항: 당기/전기 데이터 모두 접미사 형식으로 표현 (유동자산_당기, 유동자산_전기)
 
 실행 예:
   cd ~/Desktop/samsung-audit-nlp-analysis
@@ -17,6 +19,7 @@ from io import StringIO
 from typing import Dict, List, Tuple, Optional
 import re
 import json
+import platform
 
 import pandas as pd
 from bs4 import BeautifulSoup
@@ -28,6 +31,7 @@ ROMAN_HEAD = re.compile(r"^[ⅰ-ⅹⅠ-Ⅹ]+\.", re.I)   # Ⅰ. Ⅱ. …
 ARABIC_HEAD = re.compile(r"^\d+\.\s*")            # 1. 2. …
 HANGUL_HEAD = re.compile(r"^[가-힣]\.\s*")         # 가. 나. …
 CUR_RE = re.compile(r"\(당\)\s*기")
+PREV_RE = re.compile(r"\(전\)\s*기")  # 전기 패턴 추가
 YEAR_BODY = re.compile(r"(20\d{2})\s*년\s*1?2\s*월")
 YEAR_FILE = re.compile(r"(20\d{2})")
 NBSP = "\u00a0"
@@ -116,6 +120,23 @@ def pick_current_col(df: pd.DataFrame) -> Optional[int]:
                 return i
     return None
 
+def pick_previous_col(df: pd.DataFrame) -> Optional[int]:
+    """(전)기 열 인덱스 탐지. 실패시 None"""
+    if isinstance(df.columns, pd.MultiIndex):
+        flat = [" ".join([str(x) for x in t if str(x) != "nan"]).strip()
+                for t in df.columns]
+        df.columns = flat
+    df.columns = [re.sub(r"\s+", " ", str(c)).strip() for c in df.columns]
+    for i, c in enumerate(df.columns):
+        if PREV_RE.search(c):
+            return i
+    for r in range(min(len(df), 3)):
+        for i in range(df.shape[1]):
+            cell = str(df.iat[r, i]).replace(" ", "")
+            if PREV_RE.search(cell):
+                return i
+    return None
+
 def longest_korean_cell(row: pd.Series) -> str:
     """좌측 라벨 셀 추정"""
     cells = [str(row.iloc[i]) for i in range(min(3, len(row)))]
@@ -131,7 +152,7 @@ def pick_row_current_value(row: pd.Series,
                            pref_col: int | None,
                            note_col: int | None):
     """
-    값 선택 우선순위:
+    당기 값 선택 우선순위:
       1) (당)기 열
       2) (당)기 열 + 1 칸
       3) 주석 오른쪽 숫자열 중 자릿수>=6 최댓값의 가장 왼쪽
@@ -157,6 +178,45 @@ def pick_row_current_value(row: pd.Series,
     leftmost = [(j, v, d) for j, v, d in big if d == maxd]
     j, v, _ = min(leftmost, key=lambda t: t[0])
     return v
+
+def pick_row_previous_value(row: pd.Series,
+                           pref_col: int | None,
+                           note_col: int | None):
+    """
+    전기 값 선택 우선순위:
+      1) (전)기 열
+      2) (전)기 열 + 1 칸
+      3) 주석 오른쪽 숫자열 중 자릿수>=6 최댓값의 두 번째 왼쪽
+    """
+    start = (note_col + 1) if note_col is not None else 1
+
+    if pref_col is not None:
+        for j in (pref_col, pref_col + 1):
+            if 0 <= j < len(row):
+                v = clean_num(row.iloc[j])
+                if v is not None:
+                    return v
+
+    cands = []
+    for j in range(start, len(row)):
+        v = clean_num(row.iloc[j])
+        if v is not None:
+            cands.append((j, v, digits_of(v)))
+    if not cands:
+        return None
+    big = [(j, v, d) for j, v, d in cands if d >= 6] or cands
+    maxd = max(d for _, _, d in big)
+    leftmost = [(j, v, d) for j, v, d in big if d == maxd]
+    
+    # 전기는 두 번째 값 선택 (당기 다음)
+    if len(leftmost) > 1:
+        j, v, _ = sorted(leftmost, key=lambda t: t[0])[1]
+        return v
+    elif len(leftmost) == 1:
+        # 하나밖에 없으면 그것을 사용
+        j, v, _ = leftmost[0]
+        return v
+    return None
 
 def infer_year(soup: BeautifulSoup, fp: Path) -> Optional[int]:
     m = YEAR_BODY.search(soup.get_text(" ", strip=True))
@@ -250,7 +310,10 @@ def extract_generic_wide(df: pd.DataFrame,
     if df.shape[1] < 2:
         return res, meta
 
-    pref_col = pick_current_col(df)
+    # 당기/전기 컬럼 찾기
+    current_col = pick_current_col(df)
+    previous_col = pick_previous_col(df)
+    
     header_rows = []
     for r in range(min(len(df), 3)):
         for i in range(df.shape[1]):
@@ -273,21 +336,47 @@ def extract_generic_wide(df: pd.DataFrame,
         if ROMAN_HEAD.search(left) or nname in {"자산", "부채", "자본",
                                                 "영업활동현금흐름", "투자활동현금흐름", "재무활동현금흐름"}:
             path = [name]
-            v = pick_row_current_value(row, pref_col, note_col)
-            emit_value(res, meta, key=name, value=v,
-                       fs_type=fs_type, source_file=source_file, table_title=table_title,
-                       row_no=i+1, subject_label=name, fiscal_year=fiscal_year,
-                       unit=unit, company=company)
+            
+            # 당기 값 (접미사 형식)
+            v_current = pick_row_current_value(row, current_col, note_col)
+            if v_current is not None:
+                current_key = f"{name}_당기"
+                emit_value(res, meta, key=current_key, value=v_current,
+                           fs_type=fs_type, source_file=source_file, table_title=table_title,
+                           row_no=i+1, subject_label=f"{name}_당기", fiscal_year=fiscal_year,
+                           unit=unit, company=company)
+            
+            # 전기 값 (접미사 형식)
+            v_previous = pick_row_previous_value(row, previous_col, note_col)
+            if v_previous is not None:
+                prev_key = f"{name}_전기"
+                emit_value(res, meta, key=prev_key, value=v_previous,
+                           fs_type=fs_type, source_file=source_file, table_title=table_title,
+                           row_no=i+1, subject_label=f"{name}_전기", fiscal_year=fiscal_year-1 if fiscal_year else None,
+                           unit=unit, company=company)
             continue
 
         # 소분류
         if ARABIC_HEAD.search(left):
             key = f"{path[0]}_{name}" if path else name
-            v = pick_row_current_value(row, pref_col, note_col)
-            emit_value(res, meta, key=key, value=v,
-                       fs_type=fs_type, source_file=source_file, table_title=table_title,
-                       row_no=i+1, subject_label=name, fiscal_year=fiscal_year,
-                       unit=unit, company=company)
+            
+            # 당기 값 (접미사 형식)
+            v_current = pick_row_current_value(row, current_col, note_col)
+            if v_current is not None:
+                current_key = f"{key}_당기"
+                emit_value(res, meta, key=current_key, value=v_current,
+                           fs_type=fs_type, source_file=source_file, table_title=table_title,
+                           row_no=i+1, subject_label=f"{name}_당기", fiscal_year=fiscal_year,
+                           unit=unit, company=company)
+            
+            # 전기 값 (접미사 형식)
+            v_previous = pick_row_previous_value(row, previous_col, note_col)
+            if v_previous is not None:
+                prev_key = f"{key}_전기"
+                emit_value(res, meta, key=prev_key, value=v_previous,
+                           fs_type=fs_type, source_file=source_file, table_title=table_title,
+                           row_no=i+1, subject_label=f"{name}_전기", fiscal_year=fiscal_year-1 if fiscal_year else None,
+                           unit=unit, company=company)
             continue
 
         # 세부분류(가.나.다.)
@@ -296,39 +385,86 @@ def extract_generic_wide(df: pd.DataFrame,
                 key = f"{path[0]}_{path[1]}_{name}" if len(path) > 1 else f"{path[0]}_{name}"
             else:
                 key = name
-            v = pick_row_current_value(row, pref_col, note_col)
-            emit_value(res, meta, key=key, value=v,
-                       fs_type=fs_type, source_file=source_file, table_title=table_title,
-                       row_no=i+1, subject_label=name, fiscal_year=fiscal_year,
-                       unit=unit, company=company)
+            
+            # 당기 값 (접미사 형식)
+            v_current = pick_row_current_value(row, current_col, note_col)
+            if v_current is not None:
+                current_key = f"{key}_당기"
+                emit_value(res, meta, key=current_key, value=v_current,
+                           fs_type=fs_type, source_file=source_file, table_title=table_title,
+                           row_no=i+1, subject_label=f"{name}_당기", fiscal_year=fiscal_year,
+                           unit=unit, company=company)
+            
+            # 전기 값 (접미사 형식)
+            v_previous = pick_row_previous_value(row, previous_col, note_col)
+            if v_previous is not None:
+                prev_key = f"{key}_전기"
+                emit_value(res, meta, key=prev_key, value=v_previous,
+                           fs_type=fs_type, source_file=source_file, table_title=table_title,
+                           row_no=i+1, subject_label=f"{name}_전기", fiscal_year=fiscal_year-1 if fiscal_year else None,
+                           unit=unit, company=company)
             continue
 
         # 일반항목 + 합계류
         key = name if ("총계" in nname or nname in {"자산총계", "부채와자본총계"}) else (f"{path[0]}_{name}" if path else name)
-        v = pick_row_current_value(row, pref_col, note_col)
-        emit_value(res, meta, key=key, value=v,
-                   fs_type=fs_type, source_file=source_file, table_title=table_title,
-                   row_no=i+1, subject_label=name, fiscal_year=fiscal_year,
-                   unit=unit, company=company)
+        
+        # 당기 값 (접미사 형식)
+        v_current = pick_row_current_value(row, current_col, note_col)
+        if v_current is not None:
+            current_key = f"{key}_당기"
+            emit_value(res, meta, key=current_key, value=v_current,
+                       fs_type=fs_type, source_file=source_file, table_title=table_title,
+                       row_no=i+1, subject_label=f"{name}_당기", fiscal_year=fiscal_year,
+                       unit=unit, company=company)
+        
+        # 전기 값 (접미사 형식)
+        v_previous = pick_row_previous_value(row, previous_col, note_col)
+        if v_previous is not None:
+            prev_key = f"{key}_전기"
+            emit_value(res, meta, key=prev_key, value=v_previous,
+                       fs_type=fs_type, source_file=source_file, table_title=table_title,
+                       row_no=i+1, subject_label=f"{name}_전기", fiscal_year=fiscal_year-1 if fiscal_year else None,
+                       unit=unit, company=company)
 
-    # 간단 보정
-    if ("유동자산" in res or "비유동자산" in res) and res.get("자산총계") is None:
-        ca = res.get("유동자산"); nca = res.get("비유동자산")
+    # 간단 보정 (당기)
+    if ("유동자산_당기" in res or "비유동자산_당기" in res) and res.get("자산총계_당기") is None:
+        ca = res.get("유동자산_당기"); nca = res.get("비유동자산_당기")
         if isinstance(ca, (int, float)) and isinstance(nca, (int, float)):
-            res["자산총계"] = float(ca) + float(nca)
-            emit_value(res, meta, key="자산총계", value=res["자산총계"],
+            res["자산총계_당기"] = float(ca) + float(nca)
+            emit_value(res, meta, key="자산총계_당기", value=res["자산총계_당기"],
                        fs_type=fs_type, source_file=source_file, table_title=table_title,
-                       row_no=0, subject_label="합산보정_자산총계", fiscal_year=fiscal_year,
+                       row_no=0, subject_label="합산보정_자산총계_당기", fiscal_year=fiscal_year,
                        unit=unit, company=company)
 
-    if ("부채총계" in res or "자본총계" in res) and res.get("부채와자본총계") is None:
-        tl = res.get("부채총계"); te = res.get("자본총계")
-        if isinstance(tl, (int, float)) and isinstance(te, (int, float)):
-            res["부채와자본총계"] = float(tl) + float(te)
-            emit_value(res, meta, key="부채와자본총계", value=res["부채와자본총계"],
+    # 간단 보정 (전기)
+    if ("유동자산_전기" in res or "비유동자산_전기" in res) and res.get("자산총계_전기") is None:
+        ca = res.get("유동자산_전기"); nca = res.get("비유동자산_전기")
+        if isinstance(ca, (int, float)) and isinstance(nca, (int, float)):
+            res["자산총계_전기"] = float(ca) + float(nca)
+            emit_value(res, meta, key="자산총계_전기", value=res["자산총계_전기"],
                        fs_type=fs_type, source_file=source_file, table_title=table_title,
-                       row_no=0, subject_label="합산보정_부채와자본총계", fiscal_year=fiscal_year,
+                       row_no=0, subject_label="합산보정_자산총계_전기", fiscal_year=fiscal_year-1 if fiscal_year else None,
                        unit=unit, company=company)
+
+    if ("부채총계_당기" in res or "자본총계_당기" in res) and res.get("부채와자본총계_당기") is None:
+        tl = res.get("부채총계_당기"); te = res.get("자본총계_당기")
+        if isinstance(tl, (int, float)) and isinstance(te, (int, float)):
+            res["부채와자본총계_당기"] = float(tl) + float(te)
+            emit_value(res, meta, key="부채와자본총계_당기", value=res["부채와자본총계_당기"],
+                       fs_type=fs_type, source_file=source_file, table_title=table_title,
+                       row_no=0, subject_label="합산보정_부채와자본총계_당기", fiscal_year=fiscal_year,
+                       unit=unit, company=company)
+    
+    # 전기 부채와자본총계 보정
+    if ("부채총계_전기" in res or "자본총계_전기" in res) and res.get("부채와자본총계_전기") is None:
+        tl = res.get("부채총계_전기"); te = res.get("자본총계_전기")
+        if isinstance(tl, (int, float)) and isinstance(te, (int, float)):
+            res["부채와자본총계_전기"] = float(tl) + float(te)
+            emit_value(res, meta, key="부채와자본총계_전기", value=res["부채와자본총계_전기"],
+                       fs_type=fs_type, source_file=source_file, table_title=table_title,
+                       row_no=0, subject_label="합산보정_부채와자본총계_전기", fiscal_year=fiscal_year-1 if fiscal_year else None,
+                       unit=unit, company=company)
+    
     return res, meta
 
 # ------------------- 자본변동표(SHE) 전용 -------------------
@@ -454,62 +590,65 @@ def extract_equity_change(df: pd.DataFrame,
 # ------------------------- 메인 -------------------------
 def main():
     root = Path(".")
-    # raw_dir = root / "data" / "raw"
-    # out_dir = root / "data" / "processed" / "json" / "by_year"
     raw_dir = root / "raw"
     out_dir = root / "staging"
     out_dir.mkdir(parents=True, exist_ok=True)
 
     files = sorted(list(raw_dir.glob("*.htm"))) + sorted(list(raw_dir.glob("*.html")))
     if not files:
-        print("[WARN] data/raw/ 에 HTML이 없습니다.")
+        print("[WARN] raw/ 에 HTML이 없습니다.")
         return
 
     by_year: Dict[str, List[dict]] = {}
 
-    for fp in tqdm(files, desc="parse", unit="file"):
-        soup = read_soup(fp)
-        yr_int = infer_year(soup, fp)
-        yr = str(yr_int) if yr_int else "unknown"
+    for fp in tqdm(files, desc="연도별 재무제표 파싱", unit="file"):
+        try:
+            soup = read_soup(fp)
+            yr = infer_year(soup, fp)
+            if yr is None:
+                print(f"[WARN] {fp.name}에서 연도를 찾을 수 없습니다.")
+                continue
 
-        base = {
-            "fiscal_year": yr_int,
-            "company": "삼성전자주식회사",
-            "unit": "백만원",
-            "source_file": str(fp),
-        }
+            yr_str = str(yr)
+            tables = iter_statement_tables(soup)
+            if not tables:
+                print(f"[WARN] {fp.name}에서 재무제표를 찾을 수 없습니다.")
+                continue
 
-        tables = iter_statement_tables(soup)
+            rec = {
+                "fiscal_year": yr,
+                "company": "삼성전자주식회사",
+                "unit": "백만원",
+                "source_file": str(fp.relative_to(root)),
+            }
+            meta_all: List[dict] = []
 
-        # 리포트 단위 wide 값 + 메타데이터
-        rec = base.copy()
-        meta_all: List[dict] = []
+            for kind, df, title in tables:
+                fs_type = FS_MAP.get(kind, kind)
+                if kind == "SHE":
+                    data, meta = extract_equity_change(
+                        df, fs_type=fs_type, source_file=str(fp.relative_to(root)),
+                        table_title=title, fiscal_year=yr, unit="백만원", company="삼성전자주식회사"
+                    )
+                else:
+                    data, meta = extract_generic_wide(
+                        df, fs_type=fs_type, source_file=str(fp.relative_to(root)),
+                        table_title=title, fiscal_year=yr, unit="백만원", company="삼성전자주식회사"
+                    )
 
-        for kind, df, title in tables:
-            fs_type = FS_MAP.get(kind, "unknown")
+                for k, v in data.items():
+                    if v is None:
+                        continue
+                    if rec.get(k) is None:
+                        rec[k] = v
 
-            if kind == "SHE":
-                data, meta = extract_equity_change(
-                    df, fs_type=fs_type, source_file=str(fp),
-                    table_title=title, fiscal_year=yr_int,
-                    unit=base["unit"], company=base["company"])
-            else:
-                data, meta = extract_generic_wide(
-                    df, fs_type=fs_type, source_file=str(fp),
-                    table_title=title, fiscal_year=yr_int,
-                    unit=base["unit"], company=base["company"])
+                meta_all.extend(meta)
 
-            # wide 값 병합(이미 있으면 유지)
-            for k, v in data.items():
-                if v is None:
-                    continue
-                if rec.get(k) is None:
-                    rec[k] = v
+            rec["meta"] = meta_all
+            by_year.setdefault(yr_str, []).append(rec)
 
-            meta_all.extend(meta)
-
-        rec["meta"] = meta_all
-        by_year.setdefault(yr, []).append(rec)
+        except Exception as e:
+            print(f"[ERROR] {fp.name} 파싱 실패: {e}")
 
     # 연도별 저장
     for y, items in sorted(by_year.items(), key=lambda t: (t[0] == "unknown", t[0])):
@@ -520,3 +659,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
