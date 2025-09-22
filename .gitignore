@@ -1,0 +1,45 @@
+# 벡터 DB 폴더 (용량이 크므로 제외)
+vector_db/
+chroma_samsung_rag*/
+test_*/
+
+# Python 캐시
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# 환경 설정
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# IDE 설정
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# 로그 파일
+*.log
+logs/
+
+# 임시 파일
+temp/
+tmp/
+.tmp/
+
+# 시스템 파일
+.DS_Store
+Thumbs.db
+
+# Jupyter Notebook 체크포인트
+.ipynb_checkpoints
+
+# 모델 캐시 (선택적)
+# ~/.cache/huggingface/
