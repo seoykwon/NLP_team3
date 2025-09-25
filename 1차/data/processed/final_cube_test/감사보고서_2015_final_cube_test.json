@@ -1,0 +1,2689 @@
+[
+  {
+    "statement": {
+      "company": "삼성전자주식회사",
+      "fiscal_year": 2015,
+      "statement_type": "balance",
+      "source_file": "/Users/dan/Desktop/snu_project/data/raw/감사보고서_2015.htm",
+      "unit": "백만원",
+      "created_at": "2025-09-24T19:04:22.815772"
+    },
+    "accounts": [
+      {
+        "account_id": "자산",
+        "account_name": "자산",
+        "parent_id": null,
+        "level": 1,
+        "is_total": false
+      },
+      {
+        "account_id": "자산_유동자산",
+        "account_name": "유동자산",
+        "parent_id": "자산",
+        "level": 2,
+        "is_total": false
+      },
+      {
+        "account_id": "자산_유동자산_현금및현금성자산",
+        "account_name": "현금및현금성자산",
+        "parent_id": "자산_유동자산",
+        "level": 3,
+        "is_total": false
+      },
+      {
+        "account_id": "자산_유동자산_단기금융상품",
+        "account_name": "단기금융상품",
+        "parent_id": "자산_유동자산",
+        "level": 3,
+        "is_total": false
+      },
+      {
+        "account_id": "자산_유동자산_단기매도가능금융자산",
+        "account_name": "단기매도가능금융자산",
+        "parent_id": "자산_유동자산",
+        "level": 3,
+        "is_total": false
+      },
+      {
+        "account_id": "자산_유동자산_매출채권",
+        "account_name": "매출채권",
+        "parent_id": "자산_유동자산",
+        "level": 3,
+        "is_total": false
+      },
+      {
+        "account_id": "자산_유동자산_미수금",
+        "account_name": "미수금",
+        "parent_id": "자산_유동자산",
+        "level": 3,
+        "is_total": false
+      },
+      {
+        "account_id": "자산_유동자산_선급금",
+        "account_name": "선급금",
+        "parent_id": "자산_유동자산",
+        "level": 3,
+        "is_total": false
+      },
+      {
+        "account_id": "자산_유동자산_선급비용",
+        "account_name": "선급비용",
+        "parent_id": "자산_유동자산",
+        "level": 3,
+        "is_total": false
+      },
+      {
+        "account_id": "자산_유동자산_재고자산",
+        "account_name": "재고자산",
+        "parent_id": "자산_유동자산",
+        "level": 3,
+        "is_total": false
+      },
+      {
+        "account_id": "자산_유동자산_기타유동자산",
+        "account_name": "기타유동자산",
+        "parent_id": "자산_유동자산",
+        "level": 3,
+        "is_total": false
+      },
+      {
+        "account_id": "자산_유동자산_매각예정분류자산",
+        "account_name": "매각예정분류자산",
+        "parent_id": "자산_유동자산",
+        "level": 3,
+        "is_total": false
+      },
+      {
+        "account_id": "자산_비유동자산",
+        "account_name": "비유동자산",
+        "parent_id": "자산",
+        "level": 2,
+        "is_total": false
+      },
+      {
+        "account_id": "자산_비유동자산_장기매도가능금융자산",
+        "account_name": "장기매도가능금융자산",
+        "parent_id": "자산_비유동자산",
+        "level": 3,
+        "is_total": false
+      },
+      {
+        "account_id": "자산_비유동자산_종속기업,관계기업및공동기업투자",
+        "account_name": "종속기업,관계기업및공동기업투자",
+        "parent_id": "자산_비유동자산",
+        "level": 3,
+        "is_total": false
+      },
+      {
+        "account_id": "자산_비유동자산_유형자산",
+        "account_name": "유형자산",
+        "parent_id": "자산_비유동자산",
+        "level": 3,
+        "is_total": false
+      },
+      {
+        "account_id": "자산_비유동자산_무형자산",
+        "account_name": "무형자산",
+        "parent_id": "자산_비유동자산",
+        "level": 3,
+        "is_total": false
+      },
+      {
+        "account_id": "자산_비유동자산_장기선급비용",
+        "account_name": "장기선급비용",
+        "parent_id": "자산_비유동자산",
+        "level": 3,
+        "is_total": false
+      },
+      {
+        "account_id": "자산_비유동자산_순확정급여자산",
+        "account_name": "순확정급여자산",
+        "parent_id": "자산_비유동자산",
+        "level": 3,
+        "is_total": false
+      },
+      {
+        "account_id": "자산_비유동자산_이연법인세자산",
+        "account_name": "이연법인세자산",
+        "parent_id": "자산_비유동자산",
+        "level": 3,
+        "is_total": false
+      },
+      {
+        "account_id": "자산_비유동자산_기타비유동자산",
+        "account_name": "기타비유동자산",
+        "parent_id": "자산_비유동자산",
+        "level": 3,
+        "is_total": false
+      },
+      {
+        "account_id": "자산_자산총계",
+        "account_name": "자산총계",
+        "parent_id": "자산",
+        "level": 2,
+        "is_total": true
+      },
+      {
+        "account_id": "부채",
+        "account_name": "부채",
+        "parent_id": null,
+        "level": 1,
+        "is_total": false
+      },
+      {
+        "account_id": "부채_유동부채",
+        "account_name": "유동부채",
+        "parent_id": "부채",
+        "level": 2,
+        "is_total": false
+      },
+      {
+        "account_id": "부채_유동부채_매입채무",
+        "account_name": "매입채무",
+        "parent_id": "부채_유동부채",
+        "level": 3,
+        "is_total": false
+      },
+      {
+        "account_id": "부채_유동부채_단기차입금",
+        "account_name": "단기차입금",
+        "parent_id": "부채_유동부채",
+        "level": 3,
+        "is_total": false
+      },
+      {
+        "account_id": "부채_유동부채_미지급금",
+        "account_name": "미지급금",
+        "parent_id": "부채_유동부채",
+        "level": 3,
+        "is_total": false
+      },
+      {
+        "account_id": "부채_유동부채_선수금",
+        "account_name": "선수금",
+        "parent_id": "부채_유동부채",
+        "level": 3,
+        "is_total": false
+      },
+      {
+        "account_id": "부채_유동부채_예수금",
+        "account_name": "예수금",
+        "parent_id": "부채_유동부채",
+        "level": 3,
+        "is_total": false
+      },
+      {
+        "account_id": "부채_유동부채_미지급비용",
+        "account_name": "미지급비용",
+        "parent_id": "부채_유동부채",
+        "level": 3,
+        "is_total": false
+      },
+      {
+        "account_id": "부채_유동부채_미지급법인세",
+        "account_name": "미지급법인세",
+        "parent_id": "부채_유동부채",
+        "level": 3,
+        "is_total": false
+      },
+      {
+        "account_id": "부채_유동부채_유동성장기부채",
+        "account_name": "유동성장기부채",
+        "parent_id": "부채_유동부채",
+        "level": 3,
+        "is_total": false
+      },
+      {
+        "account_id": "부채_유동부채_충당부채",
+        "account_name": "충당부채",
+        "parent_id": "부채_유동부채",
+        "level": 3,
+        "is_total": false
+      },
+      {
+        "account_id": "부채_유동부채_기타유동부채",
+        "account_name": "기타유동부채",
+        "parent_id": "부채_유동부채",
+        "level": 3,
+        "is_total": false
+      },
+      {
+        "account_id": "부채_유동부채_매각예정분류부채",
+        "account_name": "매각예정분류부채",
+        "parent_id": "부채_유동부채",
+        "level": 3,
+        "is_total": false
+      },
+      {
+        "account_id": "부채_비유동부채",
+        "account_name": "비유동부채",
+        "parent_id": "부채",
+        "level": 2,
+        "is_total": false
+      },
+      {
+        "account_id": "부채_비유동부채_사채",
+        "account_name": "사채",
+        "parent_id": "부채_비유동부채",
+        "level": 3,
+        "is_total": false
+      },
+      {
+        "account_id": "부채_비유동부채_장기미지급금",
+        "account_name": "장기미지급금",
+        "parent_id": "부채_비유동부채",
+        "level": 3,
+        "is_total": false
+      },
+      {
+        "account_id": "부채_비유동부채_이연법인세부채",
+        "account_name": "이연법인세부채",
+        "parent_id": "부채_비유동부채",
+        "level": 3,
+        "is_total": false
+      },
+      {
+        "account_id": "부채_비유동부채_장기충당부채",
+        "account_name": "장기충당부채",
+        "parent_id": "부채_비유동부채",
+        "level": 3,
+        "is_total": false
+      },
+      {
+        "account_id": "부채_비유동부채_기타비유동부채",
+        "account_name": "기타비유동부채",
+        "parent_id": "부채_비유동부채",
+        "level": 3,
+        "is_total": false
+      },
+      {
+        "account_id": "부채_부채총계",
+        "account_name": "부채총계",
+        "parent_id": "부채",
+        "level": 2,
+        "is_total": true
+      },
+      {
+        "account_id": "자본",
+        "account_name": "자본",
+        "parent_id": null,
+        "level": 1,
+        "is_total": false
+      },
+      {
+        "account_id": "자본_자본금",
+        "account_name": "자본금",
+        "parent_id": "자본",
+        "level": 2,
+        "is_total": false
+      },
+      {
+        "account_id": "자본_자본금_우선주자본금",
+        "account_name": "우선주자본금",
+        "parent_id": "자본_자본금",
+        "level": 3,
+        "is_total": false
+      },
+      {
+        "account_id": "자본_자본금_우선주자본금_보통주자본금",
+        "account_name": "보통주자본금",
+        "parent_id": "자본_자본금_우선주자본금",
+        "level": 3,
+        "is_total": false
+      },
+      {
+        "account_id": "자본_주식발행초과금",
+        "account_name": "주식발행초과금",
+        "parent_id": "자본",
+        "level": 2,
+        "is_total": false
+      },
+      {
+        "account_id": "자본_이익잉여금",
+        "account_name": "이익잉여금",
+        "parent_id": "자본",
+        "level": 2,
+        "is_total": false
+      },
+      {
+        "account_id": "자본_기타자본항목",
+        "account_name": "기타자본항목",
+        "parent_id": "자본",
+        "level": 2,
+        "is_total": false
+      },
+      {
+        "account_id": "매각예정분류기타자본항목",
+        "account_name": "매각예정분류기타자본항목",
+        "parent_id": null,
+        "level": 1,
+        "is_total": false
+      },
+      {
+        "account_id": "자본총계",
+        "account_name": "자본총계",
+        "parent_id": null,
+        "level": 2,
+        "is_total": true
+      },
+      {
+        "account_id": "부채와자본총계",
+        "account_name": "부채와자본총계",
+        "parent_id": null,
+        "level": 1,
+        "is_total": true
+      }
+    ],
+    "account_values": [
+      {
+        "account_id": "자산_유동자산",
+        "value": 67002055.0,
+        "period_type": "current",
+        "source_row": 2,
+        "notes": null,
+        "column_index": 3,
+        "is_subtotal": false
+      },
+      {
+        "account_id": "자산_유동자산",
+        "value": 62054773.0,
+        "period_type": "previous",
+        "source_row": 2,
+        "notes": null,
+        "column_index": 5,
+        "is_subtotal": false
+      },
+      {
+        "account_id": "자산_유동자산_현금및현금성자산",
+        "value": 3062960.0,
+        "period_type": "current",
+        "source_row": 3,
+        "notes": "4, 6, 7",
+        "column_index": 2,
+        "is_subtotal": true
+      },
+      {
+        "account_id": "자산_유동자산_현금및현금성자산",
+        "value": 1643318.0,
+        "period_type": "previous",
+        "source_row": 3,
+        "notes": "4, 6, 7",
+        "column_index": 4,
+        "is_subtotal": true
+      },
+      {
+        "account_id": "자산_유동자산_단기금융상품",
+        "value": 27763589.0,
+        "period_type": "current",
+        "source_row": 4,
+        "notes": "5, 6, 7",
+        "column_index": 2,
+        "is_subtotal": true
+      },
+      {
+        "account_id": "자산_유동자산_단기금융상품",
+        "value": 26454093.0,
+        "period_type": "previous",
+        "source_row": 4,
+        "notes": "5, 6, 7",
+        "column_index": 4,
+        "is_subtotal": true
+      },
+      {
+        "account_id": "자산_유동자산_단기매도가능금융자산",
+        "value": 3021210.0,
+        "period_type": "current",
+        "source_row": 5,
+        "notes": "6, 9",
+        "column_index": 2,
+        "is_subtotal": true
+      },
+      {
+        "account_id": "자산_유동자산_단기매도가능금융자산",
+        "value": 2137533.0,
+        "period_type": "previous",
+        "source_row": 5,
+        "notes": "6, 9",
+        "column_index": 4,
+        "is_subtotal": true
+      },
+      {
+        "account_id": "자산_유동자산_매출채권",
+        "value": 20251464.0,
+        "period_type": "current",
+        "source_row": 6,
+        "notes": "6, 7, 10",
+        "column_index": 2,
+        "is_subtotal": true
+      },
+      {
+        "account_id": "자산_유동자산_매출채권",
+        "value": 18940786.0,
+        "period_type": "previous",
+        "source_row": 6,
+        "notes": "6, 7, 10",
+        "column_index": 4,
+        "is_subtotal": true
+      },
+      {
+        "account_id": "자산_유동자산_미수금",
+        "value": 2314823.0,
+        "period_type": "current",
+        "source_row": 7,
+        "notes": "6, 10",
+        "column_index": 2,
+        "is_subtotal": true
+      },
+      {
+        "account_id": "자산_유동자산_미수금",
+        "value": 3218973.0,
+        "period_type": "previous",
+        "source_row": 7,
+        "notes": "6, 10",
+        "column_index": 4,
+        "is_subtotal": true
+      },
+      {
+        "account_id": "자산_유동자산_선급금",
+        "value": 1105216.0,
+        "period_type": "current",
+        "source_row": 8,
+        "notes": null,
+        "column_index": 2,
+        "is_subtotal": true
+      },
+      {
+        "account_id": "자산_유동자산_선급금",
+        "value": 977114.0,
+        "period_type": "previous",
+        "source_row": 8,
+        "notes": null,
+        "column_index": 4,
+        "is_subtotal": true
+      },
+      {
+        "account_id": "자산_유동자산_선급비용",
+        "value": 1980305.0,
+        "period_type": "current",
+        "source_row": 9,
+        "notes": null,
+        "column_index": 2,
+        "is_subtotal": true
+      },
+      {
+        "account_id": "자산_유동자산_선급비용",
+        "value": 1846360.0,
+        "period_type": "previous",
+        "source_row": 9,
+        "notes": null,
+        "column_index": 4,
+        "is_subtotal": true
+      },
+      {
+        "account_id": "자산_유동자산_재고자산",
+        "value": 6578112.0,
+        "period_type": "current",
+        "source_row": 10,
+        "notes": "11",
+        "column_index": 2,
+        "is_subtotal": true
+      },
+      {
+        "account_id": "자산_유동자산_재고자산",
+        "value": 5553834.0,
+        "period_type": "previous",
+        "source_row": 10,
+        "notes": "11",
+        "column_index": 4,
+        "is_subtotal": true
+      },
+      {
+        "account_id": "자산_유동자산_기타유동자산",
+        "value": 847303.0,
+        "period_type": "current",
+        "source_row": 11,
+        "notes": null,
+        "column_index": 2,
+        "is_subtotal": true
+      },
+      {
+        "account_id": "자산_유동자산_기타유동자산",
+        "value": 821079.0,
+        "period_type": "previous",
+        "source_row": 11,
+        "notes": null,
+        "column_index": 4,
+        "is_subtotal": true
+      },
+      {
+        "account_id": "자산_유동자산_매각예정분류자산",
+        "value": 77073.0,
+        "period_type": "current",
+        "source_row": 12,
+        "notes": "34",
+        "column_index": 2,
+        "is_subtotal": true
+      },
+      {
+        "account_id": "자산_유동자산_매각예정분류자산",
+        "value": 461683.0,
+        "period_type": "previous",
+        "source_row": 12,
+        "notes": "34",
+        "column_index": 4,
+        "is_subtotal": true
+      },
+      {
+        "account_id": "자산_비유동자산",
+        "value": 101967575.0,
+        "period_type": "current",
+        "source_row": 13,
+        "notes": null,
+        "column_index": 3,
+        "is_subtotal": false
+      },
+      {
+        "account_id": "자산_비유동자산",
+        "value": 102005810.0,
+        "period_type": "previous",
+        "source_row": 13,
+        "notes": null,
+        "column_index": 5,
+        "is_subtotal": false
+      },
+      {
+        "account_id": "자산_비유동자산_장기매도가능금융자산",
+        "value": 3205283.0,
+        "period_type": "current",
+        "source_row": 14,
+        "notes": "6, 9",
+        "column_index": 2,
+        "is_subtotal": true
+      },
+      {
+        "account_id": "자산_비유동자산_장기매도가능금융자산",
+        "value": 7106234.0,
+        "period_type": "previous",
+        "source_row": 14,
+        "notes": "6, 9",
+        "column_index": 4,
+        "is_subtotal": true
+      },
+      {
+        "account_id": "자산_비유동자산_종속기업,관계기업및공동기업투자",
+        "value": 44107398.0,
+        "period_type": "current",
+        "source_row": 15,
+        "notes": "12",
+        "column_index": 2,
+        "is_subtotal": true
+      },
+      {
+        "account_id": "자산_비유동자산_종속기업,관계기업및공동기업투자",
+        "value": 41857431.0,
+        "period_type": "previous",
+        "source_row": 15,
+        "notes": "12",
+        "column_index": 4,
+        "is_subtotal": true
+      },
+      {
+        "account_id": "자산_비유동자산_유형자산",
+        "value": 45148629.0,
+        "period_type": "current",
+        "source_row": 16,
+        "notes": "13",
+        "column_index": 2,
+        "is_subtotal": true
+      },
+      {
+        "account_id": "자산_비유동자산_유형자산",
+        "value": 43744259.0,
+        "period_type": "previous",
+        "source_row": 16,
+        "notes": "13",
+        "column_index": 4,
+        "is_subtotal": true
+      },
+      {
+        "account_id": "자산_비유동자산_무형자산",
+        "value": 3407229.0,
+        "period_type": "current",
+        "source_row": 17,
+        "notes": "14",
+        "column_index": 2,
+        "is_subtotal": true
+      },
+      {
+        "account_id": "자산_비유동자산_무형자산",
+        "value": 3051564.0,
+        "period_type": "previous",
+        "source_row": 17,
+        "notes": "14",
+        "column_index": 4,
+        "is_subtotal": true
+      },
+      {
+        "account_id": "자산_비유동자산_장기선급비용",
+        "value": 3845119.0,
+        "period_type": "current",
+        "source_row": 18,
+        "notes": null,
+        "column_index": 2,
+        "is_subtotal": true
+      },
+      {
+        "account_id": "자산_비유동자산_장기선급비용",
+        "value": 4415935.0,
+        "period_type": "previous",
+        "source_row": 18,
+        "notes": null,
+        "column_index": 4,
+        "is_subtotal": true
+      },
+      {
+        "account_id": "자산_비유동자산_순확정급여자산",
+        "value": 56174.0,
+        "period_type": "current",
+        "source_row": 19,
+        "notes": "17",
+        "column_index": 2,
+        "is_subtotal": true
+      },
+      {
+        "account_id": "자산_비유동자산_순확정급여자산",
+        "value": 135951.0,
+        "period_type": "previous",
+        "source_row": 19,
+        "notes": "17",
+        "column_index": 4,
+        "is_subtotal": true
+      },
+      {
+        "account_id": "자산_비유동자산_이연법인세자산",
+        "value": 865903.0,
+        "period_type": "current",
+        "source_row": 20,
+        "notes": "29",
+        "column_index": 2,
+        "is_subtotal": true
+      },
+      {
+        "account_id": "자산_비유동자산_이연법인세자산",
+        "value": "-",
+        "period_type": "previous",
+        "source_row": 20,
+        "notes": "29",
+        "column_index": 4,
+        "is_subtotal": true
+      },
+      {
+        "account_id": "자산_비유동자산_기타비유동자산",
+        "value": 1331840.0,
+        "period_type": "current",
+        "source_row": 21,
+        "notes": null,
+        "column_index": 2,
+        "is_subtotal": true
+      },
+      {
+        "account_id": "자산_비유동자산_기타비유동자산",
+        "value": 1694436.0,
+        "period_type": "previous",
+        "source_row": 21,
+        "notes": null,
+        "column_index": 4,
+        "is_subtotal": true
+      },
+      {
+        "account_id": "자산_자산총계",
+        "value": 168969630.0,
+        "period_type": "current",
+        "source_row": 22,
+        "notes": null,
+        "column_index": 3,
+        "is_subtotal": false
+      },
+      {
+        "account_id": "자산_자산총계",
+        "value": 164060583.0,
+        "period_type": "previous",
+        "source_row": 22,
+        "notes": null,
+        "column_index": 5,
+        "is_subtotal": false
+      },
+      {
+        "account_id": "부채_유동부채",
+        "value": 29630488.0,
+        "period_type": "current",
+        "source_row": 24,
+        "notes": null,
+        "column_index": 3,
+        "is_subtotal": false
+      },
+      {
+        "account_id": "부채_유동부채",
+        "value": 28208638.0,
+        "period_type": "previous",
+        "source_row": 24,
+        "notes": null,
+        "column_index": 5,
+        "is_subtotal": false
+      },
+      {
+        "account_id": "부채_유동부채_매입채무",
+        "value": 3887983.0,
+        "period_type": "current",
+        "source_row": 25,
+        "notes": "6",
+        "column_index": 2,
+        "is_subtotal": true
+      },
+      {
+        "account_id": "부채_유동부채_매입채무",
+        "value": 4677527.0,
+        "period_type": "previous",
+        "source_row": 25,
+        "notes": "6",
+        "column_index": 4,
+        "is_subtotal": true
+      },
+      {
+        "account_id": "부채_유동부채_단기차입금",
+        "value": 7127527.0,
+        "period_type": "current",
+        "source_row": 26,
+        "notes": "6, 8, 15",
+        "column_index": 2,
+        "is_subtotal": true
+      },
+      {
+        "account_id": "부채_유동부채_단기차입금",
+        "value": 2928182.0,
+        "period_type": "previous",
+        "source_row": 26,
+        "notes": "6, 8, 15",
+        "column_index": 4,
+        "is_subtotal": true
+      },
+      {
+        "account_id": "부채_유동부채_미지급금",
+        "value": 5952236.0,
+        "period_type": "current",
+        "source_row": 27,
+        "notes": "6",
+        "column_index": 2,
+        "is_subtotal": true
+      },
+      {
+        "account_id": "부채_유동부채_미지급금",
+        "value": 6460166.0,
+        "period_type": "previous",
+        "source_row": 27,
+        "notes": "6",
+        "column_index": 4,
+        "is_subtotal": true
+      },
+      {
+        "account_id": "부채_유동부채_선수금",
+        "value": 160990.0,
+        "period_type": "current",
+        "source_row": 28,
+        "notes": null,
+        "column_index": 2,
+        "is_subtotal": true
+      },
+      {
+        "account_id": "부채_유동부채_선수금",
+        "value": 139803.0,
+        "period_type": "previous",
+        "source_row": 28,
+        "notes": null,
+        "column_index": 4,
+        "is_subtotal": true
+      },
+      {
+        "account_id": "부채_유동부채_예수금",
+        "value": 341806.0,
+        "period_type": "current",
+        "source_row": 29,
+        "notes": null,
+        "column_index": 2,
+        "is_subtotal": true
+      },
+      {
+        "account_id": "부채_유동부채_예수금",
+        "value": 596164.0,
+        "period_type": "previous",
+        "source_row": 29,
+        "notes": null,
+        "column_index": 4,
+        "is_subtotal": true
+      },
+      {
+        "account_id": "부채_유동부채_미지급비용",
+        "value": 6126350.0,
+        "period_type": "current",
+        "source_row": 30,
+        "notes": null,
+        "column_index": 2,
+        "is_subtotal": true
+      },
+      {
+        "account_id": "부채_유동부채_미지급비용",
+        "value": 7413148.0,
+        "period_type": "previous",
+        "source_row": 30,
+        "notes": null,
+        "column_index": 4,
+        "is_subtotal": true
+      },
+      {
+        "account_id": "부채_유동부채_미지급법인세",
+        "value": 1802344.0,
+        "period_type": "current",
+        "source_row": 31,
+        "notes": null,
+        "column_index": 2,
+        "is_subtotal": true
+      },
+      {
+        "account_id": "부채_유동부채_미지급법인세",
+        "value": 1707176.0,
+        "period_type": "previous",
+        "source_row": 31,
+        "notes": null,
+        "column_index": 4,
+        "is_subtotal": true
+      },
+      {
+        "account_id": "부채_유동부채_유동성장기부채",
+        "value": 5666.0,
+        "period_type": "current",
+        "source_row": 32,
+        "notes": "6, 16",
+        "column_index": 2,
+        "is_subtotal": true
+      },
+      {
+        "account_id": "부채_유동부채_유동성장기부채",
+        "value": 5304.0,
+        "period_type": "previous",
+        "source_row": 32,
+        "notes": "6, 16",
+        "column_index": 4,
+        "is_subtotal": true
+      },
+      {
+        "account_id": "부채_유동부채_충당부채",
+        "value": 4207745.0,
+        "period_type": "current",
+        "source_row": 33,
+        "notes": "18",
+        "column_index": 2,
+        "is_subtotal": true
+      },
+      {
+        "account_id": "부채_유동부채_충당부채",
+        "value": 4246054.0,
+        "period_type": "previous",
+        "source_row": 33,
+        "notes": "18",
+        "column_index": 4,
+        "is_subtotal": true
+      },
+      {
+        "account_id": "부채_유동부채_기타유동부채",
+        "value": 17841.0,
+        "period_type": "current",
+        "source_row": 34,
+        "notes": null,
+        "column_index": 2,
+        "is_subtotal": true
+      },
+      {
+        "account_id": "부채_유동부채_기타유동부채",
+        "value": 14855.0,
+        "period_type": "previous",
+        "source_row": 34,
+        "notes": null,
+        "column_index": 4,
+        "is_subtotal": true
+      },
+      {
+        "account_id": "부채_유동부채_매각예정분류부채",
+        "value": "-",
+        "period_type": "current",
+        "source_row": 35,
+        "notes": "34",
+        "column_index": 2,
+        "is_subtotal": true
+      },
+      {
+        "account_id": "부채_유동부채_매각예정분류부채",
+        "value": 20259.0,
+        "period_type": "previous",
+        "source_row": 35,
+        "notes": "34",
+        "column_index": 4,
+        "is_subtotal": true
+      },
+      {
+        "account_id": "부채_비유동부채",
+        "value": 2910887.0,
+        "period_type": "current",
+        "source_row": 36,
+        "notes": null,
+        "column_index": 3,
+        "is_subtotal": false
+      },
+      {
+        "account_id": "부채_비유동부채",
+        "value": 3174870.0,
+        "period_type": "previous",
+        "source_row": 36,
+        "notes": null,
+        "column_index": 5,
+        "is_subtotal": false
+      },
+      {
+        "account_id": "부채_비유동부채_사채",
+        "value": 62326.0,
+        "period_type": "current",
+        "source_row": 37,
+        "notes": "6, 16",
+        "column_index": 2,
+        "is_subtotal": true
+      },
+      {
+        "account_id": "부채_비유동부채_사채",
+        "value": 63648.0,
+        "period_type": "previous",
+        "source_row": 37,
+        "notes": "6, 16",
+        "column_index": 4,
+        "is_subtotal": true
+      },
+      {
+        "account_id": "부채_비유동부채_장기미지급금",
+        "value": 2387934.0,
+        "period_type": "current",
+        "source_row": 38,
+        "notes": "6",
+        "column_index": 2,
+        "is_subtotal": true
+      },
+      {
+        "account_id": "부채_비유동부채_장기미지급금",
+        "value": 2305055.0,
+        "period_type": "previous",
+        "source_row": 38,
+        "notes": "6",
+        "column_index": 4,
+        "is_subtotal": true
+      },
+      {
+        "account_id": "부채_비유동부채_이연법인세부채",
+        "value": "-",
+        "period_type": "current",
+        "source_row": 39,
+        "notes": "29",
+        "column_index": 2,
+        "is_subtotal": true
+      },
+      {
+        "account_id": "부채_비유동부채_이연법인세부채",
+        "value": 364366.0,
+        "period_type": "previous",
+        "source_row": 39,
+        "notes": "29",
+        "column_index": 4,
+        "is_subtotal": true
+      },
+      {
+        "account_id": "부채_비유동부채_장기충당부채",
+        "value": 457290.0,
+        "period_type": "current",
+        "source_row": 40,
+        "notes": "18",
+        "column_index": 2,
+        "is_subtotal": true
+      },
+      {
+        "account_id": "부채_비유동부채_장기충당부채",
+        "value": 437974.0,
+        "period_type": "previous",
+        "source_row": 40,
+        "notes": "18",
+        "column_index": 4,
+        "is_subtotal": true
+      },
+      {
+        "account_id": "부채_비유동부채_기타비유동부채",
+        "value": 3337.0,
+        "period_type": "current",
+        "source_row": 41,
+        "notes": null,
+        "column_index": 2,
+        "is_subtotal": true
+      },
+      {
+        "account_id": "부채_비유동부채_기타비유동부채",
+        "value": 3827.0,
+        "period_type": "previous",
+        "source_row": 41,
+        "notes": null,
+        "column_index": 4,
+        "is_subtotal": true
+      },
+      {
+        "account_id": "부채_부채총계",
+        "value": 32541375.0,
+        "period_type": "current",
+        "source_row": 42,
+        "notes": null,
+        "column_index": 3,
+        "is_subtotal": false
+      },
+      {
+        "account_id": "부채_부채총계",
+        "value": 31383508.0,
+        "period_type": "previous",
+        "source_row": 42,
+        "notes": null,
+        "column_index": 5,
+        "is_subtotal": false
+      },
+      {
+        "account_id": "자본_자본금",
+        "value": 897514.0,
+        "period_type": "current",
+        "source_row": 44,
+        "notes": "20",
+        "column_index": 3,
+        "is_subtotal": false
+      },
+      {
+        "account_id": "자본_자본금",
+        "value": 897514.0,
+        "period_type": "previous",
+        "source_row": 44,
+        "notes": "20",
+        "column_index": 5,
+        "is_subtotal": false
+      },
+      {
+        "account_id": "자본_자본금_우선주자본금",
+        "value": 119467.0,
+        "period_type": "current",
+        "source_row": 45,
+        "notes": null,
+        "column_index": 2,
+        "is_subtotal": true
+      },
+      {
+        "account_id": "자본_자본금_우선주자본금",
+        "value": 119467.0,
+        "period_type": "previous",
+        "source_row": 45,
+        "notes": null,
+        "column_index": 4,
+        "is_subtotal": true
+      },
+      {
+        "account_id": "자본_자본금_우선주자본금_보통주자본금",
+        "value": 778047.0,
+        "period_type": "current",
+        "source_row": 46,
+        "notes": null,
+        "column_index": 2,
+        "is_subtotal": true
+      },
+      {
+        "account_id": "자본_자본금_우선주자본금_보통주자본금",
+        "value": 778047.0,
+        "period_type": "previous",
+        "source_row": 46,
+        "notes": null,
+        "column_index": 4,
+        "is_subtotal": true
+      },
+      {
+        "account_id": "자본_주식발행초과금",
+        "value": 4403893.0,
+        "period_type": "current",
+        "source_row": 47,
+        "notes": null,
+        "column_index": 3,
+        "is_subtotal": false
+      },
+      {
+        "account_id": "자본_주식발행초과금",
+        "value": 4403893.0,
+        "period_type": "previous",
+        "source_row": 47,
+        "notes": null,
+        "column_index": 5,
+        "is_subtotal": false
+      },
+      {
+        "account_id": "자본_이익잉여금",
+        "value": 143629177.0,
+        "period_type": "current",
+        "source_row": 48,
+        "notes": "21",
+        "column_index": 3,
+        "is_subtotal": false
+      },
+      {
+        "account_id": "자본_이익잉여금",
+        "value": 134464189.0,
+        "period_type": "previous",
+        "source_row": 48,
+        "notes": "21",
+        "column_index": 5,
+        "is_subtotal": false
+      },
+      {
+        "account_id": "자본_기타자본항목",
+        "value": -12526126.0,
+        "period_type": "current",
+        "source_row": 49,
+        "notes": "23",
+        "column_index": 3,
+        "is_subtotal": false
+      },
+      {
+        "account_id": "자본_기타자본항목",
+        "value": -7113271.0,
+        "period_type": "previous",
+        "source_row": 49,
+        "notes": "23",
+        "column_index": 5,
+        "is_subtotal": false
+      },
+      {
+        "account_id": "매각예정분류기타자본항목",
+        "value": 23797.0,
+        "period_type": "current",
+        "source_row": 50,
+        "notes": "34",
+        "column_index": 3,
+        "is_subtotal": false
+      },
+      {
+        "account_id": "매각예정분류기타자본항목",
+        "value": 24750.0,
+        "period_type": "previous",
+        "source_row": 50,
+        "notes": "34",
+        "column_index": 5,
+        "is_subtotal": false
+      },
+      {
+        "account_id": "자본총계",
+        "value": 136428255.0,
+        "period_type": "current",
+        "source_row": 51,
+        "notes": null,
+        "column_index": 3,
+        "is_subtotal": false
+      },
+      {
+        "account_id": "자본총계",
+        "value": 132677075.0,
+        "period_type": "previous",
+        "source_row": 51,
+        "notes": null,
+        "column_index": 5,
+        "is_subtotal": false
+      },
+      {
+        "account_id": "부채와자본총계",
+        "value": 168969630.0,
+        "period_type": "current",
+        "source_row": 52,
+        "notes": null,
+        "column_index": 3,
+        "is_subtotal": false
+      },
+      {
+        "account_id": "부채와자본총계",
+        "value": 164060583.0,
+        "period_type": "previous",
+        "source_row": 52,
+        "notes": null,
+        "column_index": 5,
+        "is_subtotal": false
+      }
+    ],
+    "equity_changes": []
+  },
+  {
+    "statement": {
+      "company": "삼성전자주식회사",
+      "fiscal_year": 2015,
+      "statement_type": "income",
+      "source_file": "/Users/dan/Desktop/snu_project/data/raw/감사보고서_2015.htm",
+      "unit": "백만원",
+      "created_at": "2025-09-24T19:04:22.815772"
+    },
+    "accounts": [
+      {
+        "account_id": "매출액",
+        "account_name": "매출액",
+        "parent_id": null,
+        "level": 1,
+        "is_total": false
+      },
+      {
+        "account_id": "매출원가",
+        "account_name": "매출원가",
+        "parent_id": null,
+        "level": 1,
+        "is_total": false
+      },
+      {
+        "account_id": "매출총이익",
+        "account_name": "매출총이익",
+        "parent_id": null,
+        "level": 1,
+        "is_total": true
+      },
+      {
+        "account_id": "매출총이익_판매비와관리비",
+        "account_name": "판매비와관리비",
+        "parent_id": "매출총이익",
+        "level": 2,
+        "is_total": false
+      },
+      {
+        "account_id": "영업이익",
+        "account_name": "영업이익",
+        "parent_id": null,
+        "level": 1,
+        "is_total": false
+      },
+      {
+        "account_id": "영업이익_기타수익",
+        "account_name": "기타수익",
+        "parent_id": "영업이익",
+        "level": 2,
+        "is_total": false
+      },
+      {
+        "account_id": "영업이익_기타수익_기타비용",
+        "account_name": "기타비용",
+        "parent_id": "영업이익_기타수익",
+        "level": 3,
+        "is_total": false
+      },
+      {
+        "account_id": "영업이익_기타수익_기타비용_금융수익",
+        "account_name": "금융수익",
+        "parent_id": "영업이익_기타수익_기타비용",
+        "level": 4,
+        "is_total": false
+      },
+      {
+        "account_id": "영업이익_기타수익_기타비용_금융수익_금융비용",
+        "account_name": "금융비용",
+        "parent_id": "영업이익_기타수익_기타비용_금융수익",
+        "level": 5,
+        "is_total": false
+      },
+      {
+        "account_id": "법인세비용차감전순이익",
+        "account_name": "법인세비용차감전순이익",
+        "parent_id": null,
+        "level": 1,
+        "is_total": false
+      },
+      {
+        "account_id": "법인세비용차감전순이익_법인세비용",
+        "account_name": "법인세비용",
+        "parent_id": "법인세비용차감전순이익",
+        "level": 2,
+        "is_total": false
+      },
+      {
+        "account_id": "당기순이익",
+        "account_name": "당기순이익",
+        "parent_id": null,
+        "level": 1,
+        "is_total": false
+      },
+      {
+        "account_id": "주당이익",
+        "account_name": "주당이익",
+        "parent_id": null,
+        "level": 1,
+        "is_total": false
+      },
+      {
+        "account_id": "주당이익_기본주당이익(단위:원)",
+        "account_name": "기본주당이익(단위:원)",
+        "parent_id": "주당이익",
+        "level": 2,
+        "is_total": false
+      },
+      {
+        "account_id": "주당이익_기본주당이익(단위:원)_희석주당이익(단위:원)",
+        "account_name": "희석주당이익(단위:원)",
+        "parent_id": "주당이익_기본주당이익(단위:원)",
+        "level": 3,
+        "is_total": false
+      }
+    ],
+    "account_values": [
+      {
+        "account_id": "매출액",
+        "value": 135205045.0,
+        "period_type": "current",
+        "source_row": 1,
+        "notes": null,
+        "column_index": 3,
+        "is_subtotal": false
+      },
+      {
+        "account_id": "매출액",
+        "value": 137825547.0,
+        "period_type": "previous",
+        "source_row": 1,
+        "notes": null,
+        "column_index": 5,
+        "is_subtotal": false
+      },
+      {
+        "account_id": "매출원가",
+        "value": 99659336.0,
+        "period_type": "current",
+        "source_row": 2,
+        "notes": "25",
+        "column_index": 3,
+        "is_subtotal": false
+      },
+      {
+        "account_id": "매출원가",
+        "value": 99188713.0,
+        "period_type": "previous",
+        "source_row": 2,
+        "notes": "25",
+        "column_index": 5,
+        "is_subtotal": false
+      },
+      {
+        "account_id": "매출총이익",
+        "value": 35545709.0,
+        "period_type": "current",
+        "source_row": 3,
+        "notes": null,
+        "column_index": 3,
+        "is_subtotal": false
+      },
+      {
+        "account_id": "매출총이익",
+        "value": 38636834.0,
+        "period_type": "previous",
+        "source_row": 3,
+        "notes": null,
+        "column_index": 5,
+        "is_subtotal": false
+      },
+      {
+        "account_id": "매출총이익_판매비와관리비",
+        "value": 22147494.0,
+        "period_type": "current",
+        "source_row": 4,
+        "notes": "25, 26",
+        "column_index": 2,
+        "is_subtotal": true
+      },
+      {
+        "account_id": "매출총이익_판매비와관리비",
+        "value": 24711840.0,
+        "period_type": "previous",
+        "source_row": 4,
+        "notes": "25, 26",
+        "column_index": 4,
+        "is_subtotal": true
+      },
+      {
+        "account_id": "영업이익",
+        "value": 13398215.0,
+        "period_type": "current",
+        "source_row": 5,
+        "notes": null,
+        "column_index": 3,
+        "is_subtotal": false
+      },
+      {
+        "account_id": "영업이익",
+        "value": 13924994.0,
+        "period_type": "previous",
+        "source_row": 5,
+        "notes": null,
+        "column_index": 5,
+        "is_subtotal": false
+      },
+      {
+        "account_id": "영업이익_기타수익",
+        "value": 1543190.0,
+        "period_type": "current",
+        "source_row": 6,
+        "notes": "27",
+        "column_index": 2,
+        "is_subtotal": true
+      },
+      {
+        "account_id": "영업이익_기타수익",
+        "value": 3507303.0,
+        "period_type": "previous",
+        "source_row": 6,
+        "notes": "27",
+        "column_index": 4,
+        "is_subtotal": true
+      },
+      {
+        "account_id": "영업이익_기타수익_기타비용",
+        "value": 792058.0,
+        "period_type": "current",
+        "source_row": 7,
+        "notes": "27",
+        "column_index": 2,
+        "is_subtotal": true
+      },
+      {
+        "account_id": "영업이익_기타수익_기타비용",
+        "value": 706929.0,
+        "period_type": "previous",
+        "source_row": 7,
+        "notes": "27",
+        "column_index": 4,
+        "is_subtotal": true
+      },
+      {
+        "account_id": "영업이익_기타수익_기타비용_금융수익",
+        "value": 4917385.0,
+        "period_type": "current",
+        "source_row": 8,
+        "notes": "28",
+        "column_index": 2,
+        "is_subtotal": true
+      },
+      {
+        "account_id": "영업이익_기타수익_기타비용_금융수익",
+        "value": 4289118.0,
+        "period_type": "previous",
+        "source_row": 8,
+        "notes": "28",
+        "column_index": 4,
+        "is_subtotal": true
+      },
+      {
+        "account_id": "영업이익_기타수익_기타비용_금융수익_금융비용",
+        "value": 4714115.0,
+        "period_type": "current",
+        "source_row": 9,
+        "notes": "28",
+        "column_index": 2,
+        "is_subtotal": true
+      },
+      {
+        "account_id": "영업이익_기타수익_기타비용_금융수익_금융비용",
+        "value": 3733845.0,
+        "period_type": "previous",
+        "source_row": 9,
+        "notes": "28",
+        "column_index": 4,
+        "is_subtotal": true
+      },
+      {
+        "account_id": "법인세비용차감전순이익",
+        "value": 14352617.0,
+        "period_type": "current",
+        "source_row": 10,
+        "notes": null,
+        "column_index": 3,
+        "is_subtotal": false
+      },
+      {
+        "account_id": "법인세비용차감전순이익",
+        "value": 17280641.0,
+        "period_type": "previous",
+        "source_row": 10,
+        "notes": null,
+        "column_index": 5,
+        "is_subtotal": false
+      },
+      {
+        "account_id": "법인세비용차감전순이익_법인세비용",
+        "value": 2114148.0,
+        "period_type": "current",
+        "source_row": 11,
+        "notes": "29",
+        "column_index": 2,
+        "is_subtotal": true
+      },
+      {
+        "account_id": "법인세비용차감전순이익_법인세비용",
+        "value": 2688860.0,
+        "period_type": "previous",
+        "source_row": 11,
+        "notes": "29",
+        "column_index": 4,
+        "is_subtotal": true
+      },
+      {
+        "account_id": "당기순이익",
+        "value": 12238469.0,
+        "period_type": "current",
+        "source_row": 12,
+        "notes": null,
+        "column_index": 3,
+        "is_subtotal": false
+      },
+      {
+        "account_id": "당기순이익",
+        "value": 14591781.0,
+        "period_type": "previous",
+        "source_row": 12,
+        "notes": null,
+        "column_index": 5,
+        "is_subtotal": false
+      },
+      {
+        "account_id": "주당이익_기본주당이익(단위:원)",
+        "value": 82682.0,
+        "period_type": "current",
+        "source_row": 14,
+        "notes": null,
+        "column_index": 3,
+        "is_subtotal": false
+      },
+      {
+        "account_id": "주당이익_기본주당이익(단위:원)",
+        "value": 96784.0,
+        "period_type": "previous",
+        "source_row": 14,
+        "notes": null,
+        "column_index": 5,
+        "is_subtotal": false
+      },
+      {
+        "account_id": "주당이익_기본주당이익(단위:원)_희석주당이익(단위:원)",
+        "value": 82680.0,
+        "period_type": "current",
+        "source_row": 15,
+        "notes": null,
+        "column_index": 3,
+        "is_subtotal": false
+      },
+      {
+        "account_id": "주당이익_기본주당이익(단위:원)_희석주당이익(단위:원)",
+        "value": 96779.0,
+        "period_type": "previous",
+        "source_row": 15,
+        "notes": null,
+        "column_index": 5,
+        "is_subtotal": false
+      }
+    ],
+    "equity_changes": []
+  },
+  {
+    "statement": {
+      "company": "삼성전자주식회사",
+      "fiscal_year": 2015,
+      "statement_type": "comprehensive",
+      "source_file": "/Users/dan/Desktop/snu_project/data/raw/감사보고서_2015.htm",
+      "unit": "백만원",
+      "created_at": "2025-09-24T19:04:22.815772"
+    },
+    "accounts": [
+      {
+        "account_id": "기타포괄손익",
+        "account_name": "기타포괄손익",
+        "parent_id": null,
+        "level": 1,
+        "is_total": false
+      },
+      {
+        "account_id": "기타포괄손익_후속적으로당기손익으로재분류되지않는포괄손익",
+        "account_name": "후속적으로당기손익으로재분류되지않는포괄손익",
+        "parent_id": "기타포괄손익",
+        "level": 2,
+        "is_total": false
+      },
+      {
+        "account_id": "기타포괄손익_순확정급여자산재측정요소",
+        "account_name": "순확정급여자산재측정요소",
+        "parent_id": "기타포괄손익",
+        "level": 2,
+        "is_total": false
+      },
+      {
+        "account_id": "후속적으로당기손익으로재분류되는포괄손익",
+        "account_name": "후속적으로당기손익으로재분류되는포괄손익",
+        "parent_id": null,
+        "level": 2,
+        "is_total": false
+      },
+      {
+        "account_id": "후속적으로당기손익으로재분류되는포괄손익_매도가능금융자산평가손익",
+        "account_name": "매도가능금융자산평가손익",
+        "parent_id": "후속적으로당기손익으로재분류되는포괄손익",
+        "level": 3,
+        "is_total": false
+      },
+      {
+        "account_id": "총포괄이익",
+        "account_name": "총포괄이익",
+        "parent_id": null,
+        "level": 1,
+        "is_total": true
+      }
+    ],
+    "account_values": [
+      {
+        "account_id": "당기순이익",
+        "value": 12238469.0,
+        "period_type": "current",
+        "source_row": 1,
+        "notes": null,
+        "column_index": 3,
+        "is_subtotal": false
+      },
+      {
+        "account_id": "당기순이익",
+        "value": 14591781.0,
+        "period_type": "previous",
+        "source_row": 1,
+        "notes": null,
+        "column_index": 5,
+        "is_subtotal": false
+      },
+      {
+        "account_id": "기타포괄손익",
+        "value": -401296.0,
+        "period_type": "current",
+        "source_row": 2,
+        "notes": null,
+        "column_index": 3,
+        "is_subtotal": false
+      },
+      {
+        "account_id": "기타포괄손익",
+        "value": -1026468.0,
+        "period_type": "previous",
+        "source_row": 2,
+        "notes": null,
+        "column_index": 5,
+        "is_subtotal": false
+      },
+      {
+        "account_id": "기타포괄손익_후속적으로당기손익으로재분류되지않는포괄손익",
+        "value": 225048.0,
+        "period_type": "current",
+        "source_row": 3,
+        "notes": null,
+        "column_index": 3,
+        "is_subtotal": false
+      },
+      {
+        "account_id": "기타포괄손익_후속적으로당기손익으로재분류되지않는포괄손익",
+        "value": -572373.0,
+        "period_type": "previous",
+        "source_row": 3,
+        "notes": null,
+        "column_index": 5,
+        "is_subtotal": false
+      },
+      {
+        "account_id": "기타포괄손익_순확정급여자산재측정요소",
+        "value": 225048.0,
+        "period_type": "current",
+        "source_row": 4,
+        "notes": "17, 23",
+        "column_index": 2,
+        "is_subtotal": true
+      },
+      {
+        "account_id": "기타포괄손익_순확정급여자산재측정요소",
+        "value": -572373.0,
+        "period_type": "previous",
+        "source_row": 4,
+        "notes": "17, 23",
+        "column_index": 4,
+        "is_subtotal": true
+      },
+      {
+        "account_id": "후속적으로당기손익으로재분류되는포괄손익",
+        "value": -626344.0,
+        "period_type": "current",
+        "source_row": 5,
+        "notes": null,
+        "column_index": 3,
+        "is_subtotal": false
+      },
+      {
+        "account_id": "후속적으로당기손익으로재분류되는포괄손익",
+        "value": -454095.0,
+        "period_type": "previous",
+        "source_row": 5,
+        "notes": null,
+        "column_index": 5,
+        "is_subtotal": false
+      },
+      {
+        "account_id": "후속적으로당기손익으로재분류되는포괄손익_매도가능금융자산평가손익",
+        "value": -626344.0,
+        "period_type": "current",
+        "source_row": 6,
+        "notes": "9, 23",
+        "column_index": 2,
+        "is_subtotal": true
+      },
+      {
+        "account_id": "후속적으로당기손익으로재분류되는포괄손익_매도가능금융자산평가손익",
+        "value": -454095.0,
+        "period_type": "previous",
+        "source_row": 6,
+        "notes": "9, 23",
+        "column_index": 4,
+        "is_subtotal": true
+      },
+      {
+        "account_id": "총포괄이익",
+        "value": 11837173.0,
+        "period_type": "current",
+        "source_row": 7,
+        "notes": null,
+        "column_index": 3,
+        "is_subtotal": false
+      },
+      {
+        "account_id": "총포괄이익",
+        "value": 13565313.0,
+        "period_type": "previous",
+        "source_row": 7,
+        "notes": null,
+        "column_index": 5,
+        "is_subtotal": false
+      }
+    ],
+    "equity_changes": []
+  },
+  {
+    "statement": {
+      "company": "삼성전자주식회사",
+      "fiscal_year": 2015,
+      "statement_type": "equity",
+      "source_file": "/Users/dan/Desktop/snu_project/data/raw/감사보고서_2015.htm",
+      "unit": "백만원",
+      "created_at": "2025-09-24T19:04:22.815772"
+    },
+    "accounts": [],
+    "account_values": [],
+    "equity_changes": []
+  },
+  {
+    "statement": {
+      "company": "삼성전자주식회사",
+      "fiscal_year": 2015,
+      "statement_type": "cashflow",
+      "source_file": "/Users/dan/Desktop/snu_project/data/raw/감사보고서_2015.htm",
+      "unit": "백만원",
+      "created_at": "2025-09-24T19:04:22.815772"
+    },
+    "accounts": [
+      {
+        "account_id": "영업활동현금흐름",
+        "account_name": "영업활동현금흐름",
+        "parent_id": null,
+        "level": 1,
+        "is_total": false
+      },
+      {
+        "account_id": "영업활동현금흐름_영업에서창출된현금흐름",
+        "account_name": "영업에서창출된현금흐름",
+        "parent_id": "영업활동현금흐름",
+        "level": 2,
+        "is_total": false
+      },
+      {
+        "account_id": "당기순이익_조정",
+        "account_name": "조정",
+        "parent_id": "당기순이익",
+        "level": 3,
+        "is_total": false
+      },
+      {
+        "account_id": "당기순이익_조정_영업활동으로인한자산부채의변동",
+        "account_name": "영업활동으로인한자산부채의변동",
+        "parent_id": "당기순이익_조정",
+        "level": 3,
+        "is_total": false
+      },
+      {
+        "account_id": "당기순이익_이자의수취",
+        "account_name": "이자의수취",
+        "parent_id": "당기순이익",
+        "level": 2,
+        "is_total": false
+      },
+      {
+        "account_id": "당기순이익_이자의지급",
+        "account_name": "이자의지급",
+        "parent_id": "당기순이익",
+        "level": 2,
+        "is_total": false
+      },
+      {
+        "account_id": "당기순이익_배당금수입",
+        "account_name": "배당금수입",
+        "parent_id": "당기순이익",
+        "level": 2,
+        "is_total": false
+      },
+      {
+        "account_id": "당기순이익_법인세납부액",
+        "account_name": "법인세납부액",
+        "parent_id": "당기순이익",
+        "level": 2,
+        "is_total": false
+      },
+      {
+        "account_id": "투자활동현금흐름",
+        "account_name": "투자활동현금흐름",
+        "parent_id": null,
+        "level": 1,
+        "is_total": false
+      },
+      {
+        "account_id": "투자활동현금흐름_단기금융상품의순(증가)감소",
+        "account_name": "단기금융상품의순(증가)감소",
+        "parent_id": "투자활동현금흐름",
+        "level": 2,
+        "is_total": false
+      },
+      {
+        "account_id": "투자활동현금흐름_단기매도가능금융자산의처분",
+        "account_name": "단기매도가능금융자산의처분",
+        "parent_id": "투자활동현금흐름",
+        "level": 2,
+        "is_total": false
+      },
+      {
+        "account_id": "투자활동현금흐름_단기매도가능금융자산의취득",
+        "account_name": "단기매도가능금융자산의취득",
+        "parent_id": "투자활동현금흐름",
+        "level": 2,
+        "is_total": false
+      },
+      {
+        "account_id": "투자활동현금흐름_장기금융상품의처분",
+        "account_name": "장기금융상품의처분",
+        "parent_id": "투자활동현금흐름",
+        "level": 2,
+        "is_total": false
+      },
+      {
+        "account_id": "투자활동현금흐름_장기금융상품의취득",
+        "account_name": "장기금융상품의취득",
+        "parent_id": "투자활동현금흐름",
+        "level": 2,
+        "is_total": false
+      },
+      {
+        "account_id": "투자활동현금흐름_장기매도가능금융자산의처분",
+        "account_name": "장기매도가능금융자산의처분",
+        "parent_id": "투자활동현금흐름",
+        "level": 2,
+        "is_total": false
+      },
+      {
+        "account_id": "투자활동현금흐름_장기매도가능금융자산의취득",
+        "account_name": "장기매도가능금융자산의취득",
+        "parent_id": "투자활동현금흐름",
+        "level": 2,
+        "is_total": false
+      },
+      {
+        "account_id": "투자활동현금흐름_종속기업,관계기업및공동기업투자의처분",
+        "account_name": "종속기업,관계기업및공동기업투자의처분",
+        "parent_id": "투자활동현금흐름",
+        "level": 2,
+        "is_total": false
+      },
+      {
+        "account_id": "투자활동현금흐름_종속기업,관계기업및공동기업투자의취득",
+        "account_name": "종속기업,관계기업및공동기업투자의취득",
+        "parent_id": "투자활동현금흐름",
+        "level": 2,
+        "is_total": false
+      },
+      {
+        "account_id": "투자활동현금흐름_유형자산의처분",
+        "account_name": "유형자산의처분",
+        "parent_id": "투자활동현금흐름",
+        "level": 2,
+        "is_total": false
+      },
+      {
+        "account_id": "투자활동현금흐름_유형자산의취득",
+        "account_name": "유형자산의취득",
+        "parent_id": "투자활동현금흐름",
+        "level": 2,
+        "is_total": false
+      },
+      {
+        "account_id": "투자활동현금흐름_무형자산의처분",
+        "account_name": "무형자산의처분",
+        "parent_id": "투자활동현금흐름",
+        "level": 2,
+        "is_total": false
+      },
+      {
+        "account_id": "투자활동현금흐름_무형자산의취득",
+        "account_name": "무형자산의취득",
+        "parent_id": "투자활동현금흐름",
+        "level": 2,
+        "is_total": false
+      },
+      {
+        "account_id": "투자활동현금흐름_현금의기타유입",
+        "account_name": "현금의기타유입",
+        "parent_id": "투자활동현금흐름",
+        "level": 2,
+        "is_total": false
+      },
+      {
+        "account_id": "재무활동현금흐름",
+        "account_name": "재무활동현금흐름",
+        "parent_id": null,
+        "level": 1,
+        "is_total": false
+      },
+      {
+        "account_id": "재무활동현금흐름_단기차입금의순증가",
+        "account_name": "단기차입금의순증가",
+        "parent_id": "재무활동현금흐름",
+        "level": 2,
+        "is_total": false
+      },
+      {
+        "account_id": "재무활동현금흐름_자기주식의취득",
+        "account_name": "자기주식의취득",
+        "parent_id": "재무활동현금흐름",
+        "level": 2,
+        "is_total": false
+      },
+      {
+        "account_id": "재무활동현금흐름_자기주식의처분",
+        "account_name": "자기주식의처분",
+        "parent_id": "재무활동현금흐름",
+        "level": 2,
+        "is_total": false
+      },
+      {
+        "account_id": "재무활동현금흐름_사채의상환",
+        "account_name": "사채의상환",
+        "parent_id": "재무활동현금흐름",
+        "level": 2,
+        "is_total": false
+      },
+      {
+        "account_id": "재무활동현금흐름_배당금의지급",
+        "account_name": "배당금의지급",
+        "parent_id": "재무활동현금흐름",
+        "level": 2,
+        "is_total": false
+      },
+      {
+        "account_id": "외화환산으로인한현금의변동",
+        "account_name": "외화환산으로인한현금의변동",
+        "parent_id": null,
+        "level": 1,
+        "is_total": false
+      },
+      {
+        "account_id": "현금및현금성자산의증가(감소)(I+II+III)",
+        "account_name": "현금및현금성자산의증가(감소)(Ⅰ+Ⅱ+Ⅲ)",
+        "parent_id": null,
+        "level": 1,
+        "is_total": false
+      },
+      {
+        "account_id": "기초의현금및현금성자산",
+        "account_name": "기초의현금및현금성자산",
+        "parent_id": null,
+        "level": 1,
+        "is_total": false
+      },
+      {
+        "account_id": "기말의현금및현금성자산",
+        "account_name": "기말의현금및현금성자산",
+        "parent_id": null,
+        "level": 1,
+        "is_total": false
+      }
+    ],
+    "account_values": [
+      {
+        "account_id": "영업활동현금흐름",
+        "value": 19287521.0,
+        "period_type": "current",
+        "source_row": 1,
+        "notes": null,
+        "column_index": 3,
+        "is_subtotal": false
+      },
+      {
+        "account_id": "영업활동현금흐름",
+        "value": 18653817.0,
+        "period_type": "previous",
+        "source_row": 1,
+        "notes": null,
+        "column_index": 5,
+        "is_subtotal": false
+      },
+      {
+        "account_id": "영업활동현금흐름_영업에서창출된현금흐름",
+        "value": 19756969.0,
+        "period_type": "current",
+        "source_row": 2,
+        "notes": null,
+        "column_index": 2,
+        "is_subtotal": true
+      },
+      {
+        "account_id": "영업활동현금흐름_영업에서창출된현금흐름",
+        "value": 20854601.0,
+        "period_type": "previous",
+        "source_row": 2,
+        "notes": null,
+        "column_index": 4,
+        "is_subtotal": true
+      },
+      {
+        "account_id": "당기순이익",
+        "value": 12238469.0,
+        "period_type": "current",
+        "source_row": 3,
+        "notes": null,
+        "column_index": 2,
+        "is_subtotal": true
+      },
+      {
+        "account_id": "당기순이익",
+        "value": 14591781.0,
+        "period_type": "previous",
+        "source_row": 3,
+        "notes": null,
+        "column_index": 4,
+        "is_subtotal": true
+      },
+      {
+        "account_id": "당기순이익_조정",
+        "value": 13087462.0,
+        "period_type": "current",
+        "source_row": 4,
+        "notes": "31.0",
+        "column_index": 2,
+        "is_subtotal": true
+      },
+      {
+        "account_id": "당기순이익_조정",
+        "value": 10894724.0,
+        "period_type": "previous",
+        "source_row": 4,
+        "notes": "31.0",
+        "column_index": 4,
+        "is_subtotal": true
+      },
+      {
+        "account_id": "당기순이익_조정_영업활동으로인한자산부채의변동",
+        "value": -5568962.0,
+        "period_type": "current",
+        "source_row": 5,
+        "notes": "31.0",
+        "column_index": 2,
+        "is_subtotal": true
+      },
+      {
+        "account_id": "당기순이익_조정_영업활동으로인한자산부채의변동",
+        "value": -4631904.0,
+        "period_type": "previous",
+        "source_row": 5,
+        "notes": "31.0",
+        "column_index": 4,
+        "is_subtotal": true
+      },
+      {
+        "account_id": "당기순이익_이자의수취",
+        "value": 890456.0,
+        "period_type": "current",
+        "source_row": 6,
+        "notes": null,
+        "column_index": 2,
+        "is_subtotal": true
+      },
+      {
+        "account_id": "당기순이익_이자의수취",
+        "value": 854946.0,
+        "period_type": "previous",
+        "source_row": 6,
+        "notes": null,
+        "column_index": 4,
+        "is_subtotal": true
+      },
+      {
+        "account_id": "당기순이익_이자의지급",
+        "value": -153195.0,
+        "period_type": "current",
+        "source_row": 7,
+        "notes": null,
+        "column_index": 2,
+        "is_subtotal": true
+      },
+      {
+        "account_id": "당기순이익_이자의지급",
+        "value": -91827.0,
+        "period_type": "previous",
+        "source_row": 7,
+        "notes": null,
+        "column_index": 4,
+        "is_subtotal": true
+      },
+      {
+        "account_id": "당기순이익_배당금수입",
+        "value": 1914856.0,
+        "period_type": "current",
+        "source_row": 8,
+        "notes": null,
+        "column_index": 2,
+        "is_subtotal": true
+      },
+      {
+        "account_id": "당기순이익_배당금수입",
+        "value": 1505107.0,
+        "period_type": "previous",
+        "source_row": 8,
+        "notes": null,
+        "column_index": 4,
+        "is_subtotal": true
+      },
+      {
+        "account_id": "당기순이익_법인세납부액",
+        "value": -3121565.0,
+        "period_type": "current",
+        "source_row": 9,
+        "notes": null,
+        "column_index": 2,
+        "is_subtotal": true
+      },
+      {
+        "account_id": "당기순이익_법인세납부액",
+        "value": -4469010.0,
+        "period_type": "previous",
+        "source_row": 9,
+        "notes": null,
+        "column_index": 4,
+        "is_subtotal": true
+      },
+      {
+        "account_id": "투자활동현금흐름",
+        "value": -14003962.0,
+        "period_type": "current",
+        "source_row": 10,
+        "notes": null,
+        "column_index": 3,
+        "is_subtotal": false
+      },
+      {
+        "account_id": "투자활동현금흐름",
+        "value": -15951220.0,
+        "period_type": "previous",
+        "source_row": 10,
+        "notes": null,
+        "column_index": 5,
+        "is_subtotal": false
+      },
+      {
+        "account_id": "투자활동현금흐름_단기금융상품의순(증가)감소",
+        "value": -2309495.0,
+        "period_type": "current",
+        "source_row": 11,
+        "notes": null,
+        "column_index": 2,
+        "is_subtotal": true
+      },
+      {
+        "account_id": "투자활동현금흐름_단기금융상품의순(증가)감소",
+        "value": 2709251.0,
+        "period_type": "previous",
+        "source_row": 11,
+        "notes": null,
+        "column_index": 4,
+        "is_subtotal": true
+      },
+      {
+        "account_id": "투자활동현금흐름_단기매도가능금융자산의처분",
+        "value": 2143384.0,
+        "period_type": "current",
+        "source_row": 12,
+        "notes": null,
+        "column_index": 2,
+        "is_subtotal": true
+      },
+      {
+        "account_id": "투자활동현금흐름_단기매도가능금융자산의처분",
+        "value": 1954156.0,
+        "period_type": "previous",
+        "source_row": 12,
+        "notes": null,
+        "column_index": 4,
+        "is_subtotal": true
+      },
+      {
+        "account_id": "투자활동현금흐름_단기매도가능금융자산의취득",
+        "value": "-",
+        "period_type": "current",
+        "source_row": 13,
+        "notes": null,
+        "column_index": 2,
+        "is_subtotal": true
+      },
+      {
+        "account_id": "투자활동현금흐름_단기매도가능금융자산의취득",
+        "value": -1518343.0,
+        "period_type": "previous",
+        "source_row": 13,
+        "notes": null,
+        "column_index": 4,
+        "is_subtotal": true
+      },
+      {
+        "account_id": "투자활동현금흐름_장기금융상품의처분",
+        "value": 1700000.0,
+        "period_type": "current",
+        "source_row": 14,
+        "notes": null,
+        "column_index": 2,
+        "is_subtotal": true
+      },
+      {
+        "account_id": "투자활동현금흐름_장기금융상품의처분",
+        "value": "-",
+        "period_type": "previous",
+        "source_row": 14,
+        "notes": null,
+        "column_index": 4,
+        "is_subtotal": true
+      },
+      {
+        "account_id": "투자활동현금흐름_장기금융상품의취득",
+        "value": "-",
+        "period_type": "current",
+        "source_row": 15,
+        "notes": null,
+        "column_index": 2,
+        "is_subtotal": true
+      },
+      {
+        "account_id": "투자활동현금흐름_장기금융상품의취득",
+        "value": -2400000.0,
+        "period_type": "previous",
+        "source_row": 15,
+        "notes": null,
+        "column_index": 4,
+        "is_subtotal": true
+      },
+      {
+        "account_id": "투자활동현금흐름_장기매도가능금융자산의처분",
+        "value": 78885.0,
+        "period_type": "current",
+        "source_row": 16,
+        "notes": null,
+        "column_index": 2,
+        "is_subtotal": true
+      },
+      {
+        "account_id": "투자활동현금흐름_장기매도가능금융자산의처분",
+        "value": 18729.0,
+        "period_type": "previous",
+        "source_row": 16,
+        "notes": null,
+        "column_index": 4,
+        "is_subtotal": true
+      },
+      {
+        "account_id": "투자활동현금흐름_장기매도가능금융자산의취득",
+        "value": -17303.0,
+        "period_type": "current",
+        "source_row": 17,
+        "notes": null,
+        "column_index": 2,
+        "is_subtotal": true
+      },
+      {
+        "account_id": "투자활동현금흐름_장기매도가능금융자산의취득",
+        "value": -3673800.0,
+        "period_type": "previous",
+        "source_row": 17,
+        "notes": null,
+        "column_index": 4,
+        "is_subtotal": true
+      },
+      {
+        "account_id": "투자활동현금흐름_종속기업,관계기업및공동기업투자의처분",
+        "value": 311310.0,
+        "period_type": "current",
+        "source_row": 18,
+        "notes": null,
+        "column_index": 2,
+        "is_subtotal": true
+      },
+      {
+        "account_id": "투자활동현금흐름_종속기업,관계기업및공동기업투자의처분",
+        "value": 21411.0,
+        "period_type": "previous",
+        "source_row": 18,
+        "notes": null,
+        "column_index": 4,
+        "is_subtotal": true
+      },
+      {
+        "account_id": "투자활동현금흐름_종속기업,관계기업및공동기업투자의취득",
+        "value": -2334935.0,
+        "period_type": "current",
+        "source_row": 19,
+        "notes": null,
+        "column_index": 2,
+        "is_subtotal": true
+      },
+      {
+        "account_id": "투자활동현금흐름_종속기업,관계기업및공동기업투자의취득",
+        "value": -1236303.0,
+        "period_type": "previous",
+        "source_row": 19,
+        "notes": null,
+        "column_index": 4,
+        "is_subtotal": true
+      },
+      {
+        "account_id": "투자활동현금흐름_유형자산의처분",
+        "value": 473836.0,
+        "period_type": "current",
+        "source_row": 20,
+        "notes": null,
+        "column_index": 2,
+        "is_subtotal": true
+      },
+      {
+        "account_id": "투자활동현금흐름_유형자산의처분",
+        "value": 195588.0,
+        "period_type": "previous",
+        "source_row": 20,
+        "notes": null,
+        "column_index": 4,
+        "is_subtotal": true
+      },
+      {
+        "account_id": "투자활동현금흐름_유형자산의취득",
+        "value": -12887965.0,
+        "period_type": "current",
+        "source_row": 21,
+        "notes": null,
+        "column_index": 2,
+        "is_subtotal": true
+      },
+      {
+        "account_id": "투자활동현금흐름_유형자산의취득",
+        "value": -10867797.0,
+        "period_type": "previous",
+        "source_row": 21,
+        "notes": null,
+        "column_index": 4,
+        "is_subtotal": true
+      },
+      {
+        "account_id": "투자활동현금흐름_무형자산의처분",
+        "value": 990.0,
+        "period_type": "current",
+        "source_row": 22,
+        "notes": null,
+        "column_index": 2,
+        "is_subtotal": true
+      },
+      {
+        "account_id": "투자활동현금흐름_무형자산의처분",
+        "value": 5176.0,
+        "period_type": "previous",
+        "source_row": 22,
+        "notes": null,
+        "column_index": 4,
+        "is_subtotal": true
+      },
+      {
+        "account_id": "투자활동현금흐름_무형자산의취득",
+        "value": -1365674.0,
+        "period_type": "current",
+        "source_row": 23,
+        "notes": null,
+        "column_index": 2,
+        "is_subtotal": true
+      },
+      {
+        "account_id": "투자활동현금흐름_무형자산의취득",
+        "value": -1254109.0,
+        "period_type": "previous",
+        "source_row": 23,
+        "notes": null,
+        "column_index": 4,
+        "is_subtotal": true
+      },
+      {
+        "account_id": "투자활동현금흐름_현금의기타유입",
+        "value": 203005.0,
+        "period_type": "current",
+        "source_row": 24,
+        "notes": null,
+        "column_index": 2,
+        "is_subtotal": true
+      },
+      {
+        "account_id": "투자활동현금흐름_현금의기타유입",
+        "value": 94821.0,
+        "period_type": "previous",
+        "source_row": 24,
+        "notes": null,
+        "column_index": 4,
+        "is_subtotal": true
+      },
+      {
+        "account_id": "재무활동현금흐름",
+        "value": -3854887.0,
+        "period_type": "current",
+        "source_row": 25,
+        "notes": null,
+        "column_index": 3,
+        "is_subtotal": false
+      },
+      {
+        "account_id": "재무활동현금흐름",
+        "value": -3089586.0,
+        "period_type": "previous",
+        "source_row": 25,
+        "notes": null,
+        "column_index": 5,
+        "is_subtotal": false
+      },
+      {
+        "account_id": "재무활동현금흐름_단기차입금의순증가",
+        "value": 4236095.0,
+        "period_type": "current",
+        "source_row": 26,
+        "notes": null,
+        "column_index": 2,
+        "is_subtotal": true
+      },
+      {
+        "account_id": "재무활동현금흐름_단기차입금의순증가",
+        "value": 170576.0,
+        "period_type": "previous",
+        "source_row": 26,
+        "notes": null,
+        "column_index": 4,
+        "is_subtotal": true
+      },
+      {
+        "account_id": "재무활동현금흐름_자기주식의취득",
+        "value": -5015112.0,
+        "period_type": "current",
+        "source_row": 27,
+        "notes": null,
+        "column_index": 2,
+        "is_subtotal": true
+      },
+      {
+        "account_id": "재무활동현금흐름_자기주식의취득",
+        "value": -1125322.0,
+        "period_type": "previous",
+        "source_row": 27,
+        "notes": null,
+        "column_index": 4,
+        "is_subtotal": true
+      },
+      {
+        "account_id": "재무활동현금흐름_자기주식의처분",
+        "value": 3034.0,
+        "period_type": "current",
+        "source_row": 28,
+        "notes": null,
+        "column_index": 2,
+        "is_subtotal": true
+      },
+      {
+        "account_id": "재무활동현금흐름_자기주식의처분",
+        "value": 27582.0,
+        "period_type": "previous",
+        "source_row": 28,
+        "notes": null,
+        "column_index": 4,
+        "is_subtotal": true
+      },
+      {
+        "account_id": "재무활동현금흐름_사채의상환",
+        "value": -5496.0,
+        "period_type": "current",
+        "source_row": 29,
+        "notes": null,
+        "column_index": 2,
+        "is_subtotal": true
+      },
+      {
+        "account_id": "재무활동현금흐름_사채의상환",
+        "value": -5274.0,
+        "period_type": "previous",
+        "source_row": 29,
+        "notes": null,
+        "column_index": 4,
+        "is_subtotal": true
+      },
+      {
+        "account_id": "재무활동현금흐름_배당금의지급",
+        "value": -3073408.0,
+        "period_type": "current",
+        "source_row": 30,
+        "notes": null,
+        "column_index": 2,
+        "is_subtotal": true
+      },
+      {
+        "account_id": "재무활동현금흐름_배당금의지급",
+        "value": -2157148.0,
+        "period_type": "previous",
+        "source_row": 30,
+        "notes": null,
+        "column_index": 4,
+        "is_subtotal": true
+      },
+      {
+        "account_id": "외화환산으로인한현금의변동",
+        "value": -9030.0,
+        "period_type": "current",
+        "source_row": 31,
+        "notes": null,
+        "column_index": 3,
+        "is_subtotal": false
+      },
+      {
+        "account_id": "외화환산으로인한현금의변동",
+        "value": "-",
+        "period_type": "previous",
+        "source_row": 31,
+        "notes": null,
+        "column_index": 5,
+        "is_subtotal": false
+      },
+      {
+        "account_id": "현금및현금성자산의증가(감소)(I+II+III)",
+        "value": 1419642.0,
+        "period_type": "current",
+        "source_row": 32,
+        "notes": null,
+        "column_index": 3,
+        "is_subtotal": false
+      },
+      {
+        "account_id": "현금및현금성자산의증가(감소)(I+II+III)",
+        "value": -386989.0,
+        "period_type": "previous",
+        "source_row": 32,
+        "notes": null,
+        "column_index": 5,
+        "is_subtotal": false
+      },
+      {
+        "account_id": "기초의현금및현금성자산",
+        "value": 1643318.0,
+        "period_type": "current",
+        "source_row": 33,
+        "notes": null,
+        "column_index": 3,
+        "is_subtotal": false
+      },
+      {
+        "account_id": "기초의현금및현금성자산",
+        "value": 2030307.0,
+        "period_type": "previous",
+        "source_row": 33,
+        "notes": null,
+        "column_index": 5,
+        "is_subtotal": false
+      },
+      {
+        "account_id": "기말의현금및현금성자산",
+        "value": 3062960.0,
+        "period_type": "current",
+        "source_row": 34,
+        "notes": null,
+        "column_index": 3,
+        "is_subtotal": false
+      },
+      {
+        "account_id": "기말의현금및현금성자산",
+        "value": 1643318.0,
+        "period_type": "previous",
+        "source_row": 34,
+        "notes": null,
+        "column_index": 5,
+        "is_subtotal": false
+      }
+    ],
+    "equity_changes": []
+  }
+]

@@ -1,0 +1,57 @@
+# 환경 변수 파일들
+.env
+.env.local
+.env.production
+.env.staging
+*.key
+config.json
+
+# API 키가 포함된 파일들
+*api_key*
+*secret*
+
+# 대용량 데이터베이스 파일들
+*.sqlite
+*.db
+qdrant
+qdrant/
+vector_store/
+*.npy
+*.pkl
+*.pickle
+
+# 캐시 및 임시 파일들
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+.venv
+.cache/
+.pytest_cache/
+
+# Jupyter Notebook 체크포인트
+.ipynb_checkpoints/
+
+# 대용량 파일들 (50MB 이상)
+*.zip
+*.tar.gz
+*.pdf
+storage.sqlite
+
+# 벡터 스토어 및 임베딩 파일들
+vector_store/
+embeddings/
+hf_cache/
+*.vec
+*.index
+
+# 로그 파일들
+*.log
+logs/
+
+# OS 생성 파일들
+.DS_Store
+Thumbs.db

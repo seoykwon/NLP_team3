@@ -1,0 +1,33 @@
+# 통합 RAG 시스템 Dependencies
+# Core ML and Data Processing
+numpy>=1.24.0
+pandas>=2.0.0
+scikit-learn>=1.0.0
+
+# Web Framework
+streamlit>=1.28.0
+
+# Vector Database
+qdrant-client>=1.6.0
+
+# Embedding and Transformers
+sentence-transformers>=2.2.0
+torch>=2.0.0
+transformers>=4.30.0
+
+# OpenAI API
+openai>=1,<2
+
+# Environment Management
+python-dotenv>=1,<2
+
+# Data Processing
+orjson>=3,<4
+tqdm>=4,<5
+rapidfuzz>=3,<4
+
+# Search and Indexing
+faiss-cpu>=1.7.0
+
+# LLaMA Support (Optional)
+llama-cpp-python>=0.2.0
